@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dockerized</title>
+    </head>
+    <body>
+        <h1>Hello, DOCKER!!!</h1>
+
+        <br/>
+
+        <form action="#" th:action="@{/user}" th:object="${user}" method="post">
+            <label>Nickname: </label>
+            <input type="text" th:field="*{nickname}" />
+            <input type="submit" value="Submit" />
+        </form>
+
+        <br/>
+
+        <p th:text="'Hello, &quot;' + ${user.nickname} + '&quot;!'" />
+
+        <br/>
+    </body>
+</html>
